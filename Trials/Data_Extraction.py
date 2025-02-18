@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 18 12:14:39 2025
+Created on Tue Feb 11 12:14:39 2025
 
 @author: Beryl
 """
@@ -36,7 +36,7 @@ times = np.arange(eeg_data.shape[1]) / sfreq
 
 plt.figure(figsize=(12, 6))
 for i in range(2, 19):
-    plt.plot(times, eeg_data[i, :] + i * 100, label=channel_names[i])  # Offset for visibility
+    plt.plot(times, eeg_data[i, :] + i * 100, label=channel_names[i]) 
 
 plt.xlabel("Time (s)")
 plt.ylabel("Amplitude (µV)")
