@@ -63,8 +63,13 @@ def get_new_art(arousal, valence):
             color = plt.cm.viridis(valence[i]*2)
             colours.append(color)
             
+    smoothness=(np.mean(valence)*50)**4
+
+    if smoothness > 500:
+        smoothness = 500
+
     fig = art_generator.generate_brain_art(
-        smoothness=(np.mean(valence)*50)**4,
+        smoothness=smoothness,
         wave_intensity=np.mean(arousal),
         num_nodes=round(np.mean(arousal) * 100),
         color_palette = colours,
